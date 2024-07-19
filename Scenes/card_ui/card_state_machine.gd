@@ -4,7 +4,7 @@ extends Node
 @export var initial_state: CardState
 
 var current_state: CardState
-var state := {}
+var states := {}
 
 func init(card: CardUI) ->void:
 	for child in get_children():
@@ -36,13 +36,10 @@ func on_mouse_exited() -> void:
 func _on_transition_requested(from: CardState, to: CardState.State) -> void:
 	if from != current_state:
 		return
-	
-	var new_state: CardState = state[to]
+	var new_state: CardState = states[to]
 	if not new_state:
 		return
-	
 	if current_state:
 		current_state.exit()
-		
 	new_state.enter()
 	current_state = new_state

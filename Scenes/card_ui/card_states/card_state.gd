@@ -14,6 +14,9 @@ func enter() -> void:
 
 func exit() -> void:
 	pass
+	
+func post_enter() -> void:
+	pass
 
 func on_input(_event: InputEvent) -> void:
 	pass

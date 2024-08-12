@@ -43,4 +43,3 @@ func _on_transition_requested(from: CardState, to: CardState.State) -> void:
 		current_state.exit()
 	new_state.enter()
 	current_state = new_state
-	new_state.post_enter()
